@@ -1,0 +1,35 @@
+   body {
+        background: linear-gradient(to right, #1a004d, #350065);
+        color: white;
+    }
+    .big-title {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    .subtitle {
+        color: #ccc;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+.btn {
+    background-color: #ff5500;
+    color: white !important;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: none;
+    text-decoration: none !important;
+    display: inline-block;
+    font-family: inherit;
+
+    }
+    /* Hide Deploy and hamburger menu */
+    [data-testid="stToolbar"], [data-testid="stDecoration"],
+    #MainMenu, header, footer {
+        visibility: hidden;
+        height: 0px;
+    }
+
+
+
