@@ -3,7 +3,20 @@ import streamlit.components.v1 as components
 from utils.razorpay_handler import create_payment_order, verify_payment
 from utils.web3_handler import connect_wallet
 import pandas as pd
-import time
+import time 
+
+
+
+
+st.markdown("""
+<style>
+[data-testid="stSidebar"] { display: none !important; }
+[data-testid="stSidebarNav"] { display: none !important; }
+#MainMenu { visibility: hidden; }
+footer { visibility: hidden; }
+</style>
+""", unsafe_allow_html=True)
+
 
 # --- Page Config ---
 st.set_page_config(page_title="eCapital Trading App", layout="wide")
@@ -134,7 +147,10 @@ def show_dashboard_page():
     with cols[2]: st.metric("Active SIPs", "3", "2 ongoing")
 
     st.subheader("Asset Allocation")
-    st.image("https://quickchart.io/chart?c={type:'doughnut',data:{labels:['BTC','ETH','SOL'], datasets:[{data:[65,25,10],backgroundColor:['#FF6384','#36A2EB','#FFCE56']}]}}")
+    chart_url = "https://quickchart.io/chart?c=%7B%22type%22%3A%22doughnut%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22BTC%22%2C%22ETH%22%2C%22SOL%22%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B65%2C25%2C10%5D%2C%22backgroundColor%22%3A%5B%22%23FF6384%22%2C%22%2336A2EB%22%2C%22%23FFCE56%22%5D%7D%5D%7D%7D"
+    st.image(chart_url)
+
+    #st.image("https://quickchart.io/chart?c={type:'doughnut',data:{labels:['BTC','ETH','SOL'], datasets:[{data:[65,25,10],backgroundColor:['#FF6384','#36A2EB','#FFCE56']}]}}")
 
     st.subheader("Recent Transactions")
     st.table(pd.DataFrame([
