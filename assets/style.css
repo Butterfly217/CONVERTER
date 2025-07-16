@@ -1,17 +1,27 @@
-   body {
-        background: linear-gradient(to right, #1a004d, #350065);
-        color: white;
-    }
-    .big-title {
-        font-size: 48px;
-        font-weight: 700;
-        line-height: 1.2;
-    }
-    .subtitle {
-        color: #ccc;
-        font-size: 18px;
-        margin-bottom: 20px;
-    }
+body {
+    background: linear-gradient(to right, #1a004d, #350065);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.big-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #fff, #aaa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    color: #ccc;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
 .btn {
     background-color: #ff5500;
     color: white !important;
@@ -21,15 +31,56 @@
     border: none;
     text-decoration: none !important;
     display: inline-block;
-    font-family: inherit;
+    transition: all 0.3s ease;
+    margin: 5px 0;
+}
 
-    }
-    /* Hide Deploy and hamburger menu */
-    [data-testid="stToolbar"], [data-testid="stDecoration"],
-    #MainMenu, header, footer {
-        visibility: hidden;
-        height: 0px;
-    }
+.btn:hover {
+    background-color: #ff7733;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 85, 0, 0.3);
+}
 
+.pay-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
+.pay-box small {
+    color: #ccc;
+    font-size: 0.9rem;
+}
 
+.pay-box strong {
+    font-size: 1.8rem;
+    display: block;
+    margin-top: 5px;
+}
+
+.rzp-button {
+    background-color: #ff5500 !important;
+    color: white !important;
+    padding: 12px 24px !important;
+    border-radius: 25px !important;
+    font-weight: bold !important;
+    border: none !important;
+    width: 100% !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.rzp-button:hover {
+    background-color: #ff7733 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Hide Streamlit default elements */
+[data-testid="stToolbar"], [data-testid="stDecoration"],
+#MainMenu, header, footer {
+    visibility: hidden !important;
+    height: 0 !important;
+}
